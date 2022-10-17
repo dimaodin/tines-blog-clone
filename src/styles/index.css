@@ -1,0 +1,25 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roobert";
+  src: url("../../public/fonts/Roobert-Regular.otf");
+}
+
+@font-face {
+  font-family: "Reckless";
+  src: url("../../public/fonts/Roobert-Regular.otf");
+}
+
+@font-face {
+    font-family: 'Reckless';
+    src: url('../../public/fonts/RecklessNeue-Regular.eot');
+    src: local('Reckless Neue Regular'), local('RecklessNeue-Regular'),
+        url('../../public/fonts/RecklessNeue-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/RecklessNeue-Regular.woff2') format('woff2'),
+        url('../../public/fonts/RecklessNeue-Regular.woff') format('woff'),
+        url('../../public/fonts/RecklessNeue-Regular.ttf') format('truetype');
+}
