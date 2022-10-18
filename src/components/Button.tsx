@@ -12,7 +12,7 @@ export const Button: React.FC<ButtonProps> = ({
     return (
         <button
             aria-label="button"
-            type="button"
+            type={`${buttonType === ButtonType.HEADER ? "button" : "submit"}`}
             className={`md:w-auto md:inline-flex rounded-2xl w-full ${buttonType === ButtonType.HEADER
                 ? 'py-3 px-2 md:px-4 ml-3 bg-indigo-500 bg-opacity-80 text-white hover:bg-indigo-600 hover:bg-opacity-80'
                 : buttonType === ButtonType.CTA
