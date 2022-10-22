@@ -4,7 +4,7 @@ import BlogPostCard from "../components/BlogPostCard";
 
 const BlogPosts = () => {
     return (
-        <div className="blog-section-container px-6">
+        <div className="blog-section-container">
             <div className="blog-posts-container pb-16 md:pb-24">
                 {posts.map((post) => {
                     return (
