@@ -6,7 +6,7 @@ const LatestBlogPosts = () => {
     return (
         <div className="blog-section-container">
             <div className="block mb-4 px-4">
-                <h1 className="text-xl font-extrabold leading-9 text-gray-900">
+                <h1 className="hidden sm:block text-xl font-extrabold leading-9 text-gray-900">
                     Latest Posts
                 </h1>
             </div>
