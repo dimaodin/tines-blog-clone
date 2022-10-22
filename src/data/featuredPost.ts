@@ -3,7 +3,7 @@ export const featuredPost = {
     imgSrc: '/images/featured-post.png',
     description:
         "By following these five tips, you can make the most out of the security resources you have and keep your operations running smoothly and efficiently.",
-    href: "#",
+    slug: "featured-post",
 };
 
 module.exports = featuredPost;

@@ -1,27 +1,28 @@
 import React, { useState } from "react";
-import { NavItem } from "./NavItem";
+import { BlogMainNavbarItem } from "./BlogMainNavbarItem";
 import { Button } from "./Button";
-import { ButtonType } from '@/lib/types';
+import { ButtonType } from '../lib/types';
+import logo from '../../public/tines.svg'
 
-const Navigation = () => {
+const BlogMainNavbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
     return (
         <div>
-            <nav className="relative w-full pt-16 xl:pt-20 pb-8 mx-auto">
-                <div className="w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl xl:block px-4 bg-white rounded-2xl mx-auto">
+            <nav className="relative w-full pt-8 xl:pt-20 pb-8 mx-auto">
+                <div className="blog-section-container block px-4 bg-white rounded-2xl">
                     <div className="flex items-center justify-between h-16 md:h-20">
                         <div className="w-full justify-between flex items-center">
                             <a className="flex-shrink-0" href="/">
-                                <img className="h-full w-full" src="/tines.svg" alt="Workflow" />
+                                <img className="h-full w-full" src={logo.src} alt="logo" />
                             </a>
                             <div className="hidden lg:block">
                                 <div className="flex items-baseline">
-                                    <NavItem href="/" text="Product" />
-                                    <NavItem href="/news" text="Use cases" />
-                                    <NavItem href="/product-updates" text="Resources" isDropdown />
-                                    <NavItem href="/tutorials" text="Company" isDropdown />
-                                    <NavItem href="/inside-tines" text="Pricing" />
-                                    <Button buttonType={ButtonType.HEADER}>Sign up for free</Button>
+                                    <BlogMainNavbarItem href="/" text="Product" />
+                                    <BlogMainNavbarItem href="/news" text="Use cases" />
+                                    <BlogMainNavbarItem href="/product-updates" text="Resources" isDropdown />
+                                    <BlogMainNavbarItem href="/tutorials" text="Company" isDropdown />
+                                    <BlogMainNavbarItem href="/inside-tines" text="Pricing" />
+                                    <Button type={ButtonType.NAVBAR}>Sign up for free</Button>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +36,6 @@ const Navigation = () => {
                                 <span className="block h-0.5 w-4 bg-gray-800"></span>
                             </div>
                             <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-
                             </div>
                         </section>
 
@@ -65,4 +65,4 @@ const Navigation = () => {
     );
 };
 
-export default Navigation;
+export default BlogMainNavbar;

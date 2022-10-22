@@ -8,7 +8,7 @@ interface NavProps {
     isDropdown?: boolean;
 }
 
-export function NavItem({
+export function BlogMainNavbarItem({
     href,
     text,
     isDropdown,

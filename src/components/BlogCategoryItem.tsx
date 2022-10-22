@@ -7,7 +7,7 @@ interface CategoryProps {
     href: string;
 }
 
-export function CategoryItem({
+export function BlogCategoryItem({
     href,
     text
 }: CategoryProps) {
@@ -18,9 +18,9 @@ export function CategoryItem({
         <Link href={href}>
             <a
                 className={`${isActive
-                    ? 'text-indigo-600 bg-indigo-400 bg-opacity-10 hover:bg-indigo-400 hover:bg-opacity-10'
-                    : 'bg-transparent'
-                    } 'w-full text-black hover:bg-indigo-200 hover:bg-opacity-10 px-3 py-2 rounded-md text-md font-medium`}
+                    ? 'text-purpleTines bg-purpleTines bg-opacity-10'
+                    : 'bg-transparent hover:bg-purpleTines hover:bg-opacity-5 text-black'
+                    } 'w-full px-3 py-2 rounded-md text-md font-medium`}
             >
                 {text}
             </a>

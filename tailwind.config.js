@@ -12,6 +12,10 @@ module.exports = {
       colors: {
         paleDesert: '#f8f4f0',
         paleLight: '#fffdfb',
+        paleDark: '#F0EBE5',
+        purpleTines: '#8577E6',
+        lightPurpleTines: '#9285E8',
+        darkPurpleTines: '#655DAC',
       }
     }
   },

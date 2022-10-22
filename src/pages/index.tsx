@@ -1,21 +1,19 @@
-import Header from '@/sections/Header'
-import Layout from '@/components/Layout'
-import Categories from '@/sections/Categories';
-import FeaturedPost from '@/sections/FeaturedPost';
-import LatestPosts from '@/sections/LatestPosts';
-import CTA from '@/sections/CTA';
-import Posts from '@/sections/Posts';
+import BlogMainHeader from '../sections/BlogMainHeader'
+import Layout from '../components/Layout'
+import FeaturedBlogPost from '../sections/FeaturedBlogPost';
+import LatestBlogPosts from '../sections/LatestBlogPosts';
+import SubscribeCTA from '../sections/SubscribeCTA';
+import BlogPosts from '../sections/BlogPosts';
 
 export default function IndexPage() {
   return (
     <Layout title="Blog | Tines">
       <main>
-        <Header />
-        <Categories />
-        <FeaturedPost />
-        <LatestPosts />
-        <CTA />
-        <Posts />
+        <BlogMainHeader />
+        <FeaturedBlogPost />
+        <LatestBlogPosts />
+        <SubscribeCTA />
+        <BlogPosts />
       </main>
     </Layout>
   )

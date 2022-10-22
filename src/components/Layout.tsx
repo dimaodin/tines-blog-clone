@@ -11,7 +11,7 @@ export default function Layout({
 }: LayoutProps) {
 
   return (
-    <div className="bg-paleLight h-screen">
+    <div className="bg-paleLight h-screen select-none">
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />

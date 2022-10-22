@@ -1,4 +1,4 @@
 export enum ButtonType {
-    HEADER = 'header',
+    NAVBAR = 'navbar',
     CTA = 'cta',
 }
