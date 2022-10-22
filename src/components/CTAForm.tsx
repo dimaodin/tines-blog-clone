@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, Resolver } from 'react-hook-form';
+import { useForm, useController } from 'react-hook-form';
 import { Button } from "./Button";
 import { ButtonType } from '../lib/types';
 import { FaInfoCircle } from 'react-icons/fa';
@@ -11,30 +11,28 @@ type FormValues = {
     lastName: string
 };
 
-const resolver: Resolver<FormValues> = async (values) => {
-    return {
-        values: values.email ? values : {},
-        errors: !values.email
-            ? {
-                email: {
-                    type: 'required',
-                    message: 'Please enter a valid email address.',
-                },
-            }
-            : {},
-    };
-};
-
 export function CTAForm() {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
+    const {
+        control,
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm<FormValues>();
+    const { field } = useController({
+        control: control,
+        name: "email",
+        rules: {
+            required: true,
+            pattern: /(^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$)/i
+        }
+    });
     const onSubmit = handleSubmit((data) => console.log(data));
-
     return (
         <div>
-            <form onSubmit={onSubmit} className="w-full max-w-xl mt-10" action="#" method="post">
+            <form onSubmit={onSubmit} className="w-full max-w-xl mt-10" action="#" method="post" noValidate>
                 <div className="flex flex-wrap gap-0 mb-2">
                     <div className="cta-form-input-container">
-                        <input className="cta-form-input sm:border-r-[1px] sm:focus:border-r-2 border-b-[1px] focus:border-b-2 rounded-xl rounded-b-none xl:rounded-tl-xl xl:rounded-r-none" id="cta-email" {...register("email")} name="email" type="email" placeholder="Your email *" />
+                        <input {...field} className="cta-form-input sm:border-r-[1px] sm:focus:border-r-2 border-b-[1px] focus:border-b-2 rounded-xl rounded-b-none xl:rounded-tl-xl xl:rounded-r-none" id="cta-email" {...register("email", { required: true })} name="email" type="email" placeholder="Your email *" />
                     </div>
                     <div className="cta-form-input-container">
                         <input className="cta-form-input border-t-[1px] border-t-2 sm:border-l-[1px] sm:focus:border-l-2 border-b-[1px] focus:border-b-2 xl:rounded-tr-xl" id="cta-company-name" {...register("companyName")} name="company name" type="text" placeholder="Your company name" />
@@ -54,7 +52,7 @@ export function CTAForm() {
                         By filling out this form your agree to the terms and conditions in our <a className="hover:underline" href="/privacy" target="_blank">Privacy&nbsp;Notice</a> <sup>↗</sup>.
                     </p>
                 </div>
-                {errors?.email && <p className="block mt-4 bg-lightPurpleTines bg-opacity-90 opacity-90 p-4 text-lg text-white leading-none rounded-lg flex items-center"><FaInfoCircle size="1.5rem" className="inline-block mr-2" /> {errors.email.message}</p>}
+                {errors?.email && <p className="block mt-4 bg-lightPurpleTines bg-opacity-90 opacity-90 p-4 text-lg text-white leading-none rounded-lg flex items-center"><FaInfoCircle size="1.5rem" className="inline-block mr-2" />Please enter a valid email address</p>}
             </form>
 
         </div>
