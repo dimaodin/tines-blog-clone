@@ -35,7 +35,7 @@ export function CTAForm() {
                         <input {...field} className="cta-form-input sm:border-r-[1px] sm:focus:border-r-2 border-b-[1px] focus:border-b-2 rounded-xl rounded-b-none xl:rounded-tl-xl xl:rounded-r-none" id="cta-email" {...register("email", { required: true })} name="email" type="email" placeholder="Your email *" />
                     </div>
                     <div className="cta-form-input-container">
-                        <input className="cta-form-input border-t-[1px] border-t-2 sm:border-l-[1px] sm:focus:border-l-2 border-b-[1px] focus:border-b-2 xl:rounded-tr-xl" id="cta-company-name" {...register("companyName")} name="company name" type="text" placeholder="Your company name" />
+                        <input className="cta-form-input border-t-[1px] sm:border-t-2 sm:border-l-[1px] sm:focus:border-l-2 border-b-[1px] focus:border-b-2 xl:rounded-tr-xl" id="cta-company-name" {...register("companyName")} name="company name" type="text" placeholder="Your company name" />
                     </div>
                     <div className="cta-form-input-container">
                         <input className="cta-form-input border-b-[1px] focus:border-b-2 sm:border-b-2 border-t-[1px] focus:border-t-2 sm:border-r-[1px] sm:focus:border-r-2 xl:rounded-bl-xl" id="cta-first-name" {...register("firstName")} name="first" type="text" placeholder="First name" />

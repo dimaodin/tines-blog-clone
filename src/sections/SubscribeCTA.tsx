@@ -1,5 +1,6 @@
 import React from "react";
 import { CTAForm } from '../components/CTAForm';
+import cta from '../../public//images/cta.svg'
 
 const SubscribeCTA = () => {
 
@@ -19,7 +20,7 @@ const SubscribeCTA = () => {
                         <CTAForm />
                     </div>
                     <div className="ml-8 xl:left-1/2 right-0">
-                        <img className="w-full object-cover max-w-44 mx-auto" src="/images/cta.svg" alt="cta illustration" />
+                        <img className="w-full object-cover max-w-44 mx-auto" src={cta.src} alt="cta illustration" />
                     </div>
                 </div>
             </div>
