@@ -1,8 +1,12 @@
 import React from "react";
-import posts from "../data/posts"
 import BlogPostCard from "../components/BlogPostCard";
+import { SinglePostType } from "@/lib/types";
 
-const BlogPosts = () => {
+interface BlogPostsProps {
+    posts: SinglePostType[];
+}
+
+export function BlogPosts({ posts }: BlogPostsProps) {
     return (
         <div className="blog-section-container">
             <div className="blog-posts-container pb-16 md:pb-24">
@@ -21,5 +25,3 @@ const BlogPosts = () => {
         </div>
     );
 };
-
-export default BlogPosts;

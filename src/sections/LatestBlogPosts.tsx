@@ -1,8 +1,12 @@
 import React from "react";
-import latestPosts from "../data/latestPosts"
 import BlogPostCard from "../components/BlogPostCard";
+import { SinglePostType } from "@/lib/types";
 
-const LatestBlogPosts = () => {
+interface LatestBlogPostsProps {
+    posts: SinglePostType[];
+}
+
+export function LatestBlogPosts({ posts }: LatestBlogPostsProps) {
     return (
         <div className="blog-section-container">
             <div className="block mb-4 px-4">
@@ -11,7 +15,7 @@ const LatestBlogPosts = () => {
                 </h1>
             </div>
             <div className="blog-posts-container">
-                {latestPosts.map((post) => {
+                {posts.map((post) => {
                     return (
                         <BlogPostCard
                             key={post.id}
@@ -26,5 +30,3 @@ const LatestBlogPosts = () => {
         </div>
     );
 };
-
-export default LatestBlogPosts;

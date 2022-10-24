@@ -1,4 +1,12 @@
-const posts = [
+export interface Posts {
+    id: number
+    title: string
+    description: string
+    imgSrc: string
+    slug: string
+}
+
+const posts: Posts[] = [
     {
         id: 1,
         title: 'TripActions Aaron Cooper: Why understanding broader company culture is critical to a security team’s success',
