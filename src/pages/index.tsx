@@ -5,9 +5,9 @@ import { LatestBlogPosts } from '../sections/LatestBlogPosts';
 import SubscribeCTA from '../sections/SubscribeCTA';
 import { BlogPosts } from '../sections/BlogPosts';
 import { SinglePostType } from "@/lib/types";
-import allPosts from "../data/allPosts.json"
-import latestPosts from "../data/latestPosts.json"
-import featuredPost from "../data/featuredPost.json"
+import allPosts from "@/public/data/allPosts.json"
+import latestPosts from "@/public/data/latestPosts.json"
+import featuredPost from "@/public/data/featuredPost.json"
 
 type Props = {
   allPosts: SinglePostType[];
