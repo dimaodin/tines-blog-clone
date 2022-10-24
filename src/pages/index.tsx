@@ -5,9 +5,6 @@ import { LatestBlogPosts } from '../sections/LatestBlogPosts';
 import SubscribeCTA from '../sections/SubscribeCTA';
 import { BlogPosts } from '../sections/BlogPosts';
 import { SinglePostType } from "@/lib/types";
-import allPosts from "@/public/data/allPosts.json"
-import latestPosts from "@/public/data/latestPosts.json"
-import featuredPost from "@/public/data/featuredPost.json"
 
 type Props = {
   allPosts: SinglePostType[];
@@ -34,7 +31,12 @@ const IndexPage = ({ allPosts, latestPosts, featuredPost }: Props) => {
 export default IndexPage
 
 export const getStaticProps = async () => {
+  const allPosts = require("@/public//data/allPosts.json");
+  const latestPosts = require("@/public//data/latestPosts.json");
+  const featuredPost = require("@/public//data/featuredPost.json");
   return {
-    props: { allPosts: allPosts, latestPosts: latestPosts, featuredPost: featuredPost },
+    props: { allPosts: JSON.parse(JSON.stringify(allPosts)), latestPosts: JSON.parse(JSON.stringify(latestPosts)), featuredPost: JSON.parse(JSON.stringify(featuredPost)) },
   };
 };
+
+
