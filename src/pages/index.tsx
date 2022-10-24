@@ -33,9 +33,9 @@ export default IndexPage
 
 
 export const getStaticProps = async () => {
-  const allPosts = require("../data/allposts.json");
-  const latestPosts = require("../data/latestposts.json");
-  const featuredPost = require("../data/featuredpost.json");
+  const allPosts = require("@/public/data/allPosts.json");
+  const latestPosts = require("@/public/data/latestposts.json");
+  const featuredPost = require("@/public/data/featuredpost.json");
   return {
     props: { allPosts: allPosts, latestPosts: latestPosts, featuredPost: featuredPost },
   };
