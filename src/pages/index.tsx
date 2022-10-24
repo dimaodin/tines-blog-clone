@@ -16,7 +16,6 @@ type Props = {
 }
 
 const IndexPage = ({ allPosts, latestPosts, featuredPost }: Props) => {
-
   return (
     <>
       <Layout title="Blog | Tines">
